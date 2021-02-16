@@ -5,13 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript">
+        function btnHitung() {
+            var datePick = document.getElementById("date_picker").value;
+            var datePick2 = document.getElementById("date_picker2").value;
+
+            var dateFormat = new Date(datePick);
+            var dateFormat2 = new Date(datePick2);
+
+
+            if(dateFormat2 < dateFormat) {
+                // To calculate the time difference of two dates 
+                var Difference_In_Time = dateFormat.getTime() - dateFormat2.getTime();
+            } else {
+                // To calculate the time difference of two dates 
+                var Difference_In_Time = dateFormat2.getTime() - dateFormat.getTime(); 
+            }
+            
+            // To calculate the no. of days between two dates 
+            var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+            console.log(Difference_In_Days);
+            document.getElementById("result").innerHTML = Difference_In_Days + " Hari";
+        }
+    </script>
 </head>
 <body>
+    <h1>Ini materi Aplikasi Mobile Basis Web :)</h1>
+    <h2>Halo, Selamat Datang</h2>
     C14180033-Marcel Slamet Sugianto
     <br>
     App Mobile Berbasis Web
     <br>
     Membuat aplikasi yang dapat memberikan tag pada maps agar dapat menyimpan lokasi yang pernah dikunjungi
     
+    <input type="date" id="date_picker">
+    <br>
+    <input type="date" id="date_picker2">
+    <input type="button" onclick="btnHitung()" value="Hitung">
+    <br>
+    <p id="result"> </p>
+    <p>
+        Yang saya pelajari dari website https://learngitbranching.js.org/ adalah saya mempelajari gimana cara mengatur proyek menggunakan git dimana terdapat beberapa fungsi seperti <br>
+        git branch untuk meninggalkan jejak nama pada suatu branch agar mempermudah kita untuk kembali ke branch tersebut <br>
+        git reset untuk mengembalikan perubahan yang ada kebentuk semula <br>
+        git merge untuk menggabungkan 2 branch secara langsung <br>
+        git revert untuk seperti pada git reset tetapi git reset hanya berguna untuk local sedangkan revert berguna untuk remote juga <br>
+        git pull untuk mengambil file yang ada dari respository <br>
+        git push untuk mengupload file yang dari local untuk masuk ke dalam respository <br> 
+    </p>
 </body>
 </html>
