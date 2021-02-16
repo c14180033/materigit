@@ -8,32 +8,24 @@
     <script type="text/javascript">
         function btnHitung() {
             var datePick = document.getElementById("date_picker").value;
-            var today = new Date();
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var yyyy = today.getFullYear();
+            var datePick2 = document.getElementById("date_picker2").value;
 
-            today = mm + '/' + dd + '/' + yyyy;
-            console.log(today);
-            console.log(datePick);
-
-            var todayDate = new Date(today);
             var dateFormat = new Date(datePick);
+            var dateFormat2 = new Date(datePick2);
 
-            console.log(todayDate);
-            console.log(dateFormat);
 
-            if(todayDate < dateFormat) {
+            if(dateFormat2 < dateFormat) {
                 // To calculate the time difference of two dates 
-                var Difference_In_Time = dateFormat.getTime() - todayDate.getTime();
+                var Difference_In_Time = dateFormat.getTime() - dateFormat2.getTime();
             } else {
                 // To calculate the time difference of two dates 
-                var Difference_In_Time = todayDate.getTime() - dateFormat.getTime(); 
+                var Difference_In_Time = dateFormat2.getTime() - dateFormat.getTime(); 
             }
             
             // To calculate the no. of days between two dates 
             var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
             console.log(Difference_In_Days);
+            document.getElementById("result").innerHTML = Difference_In_Days + " Hari";
         }
     </script>
 </head>
@@ -41,6 +33,8 @@
     C14180033-Marcel Slamet Sugianto
     <br>
     <input type="date" id="date_picker">
+    <br>
+    <input type="date" id="date_picker2">
     <input type="button" onclick="btnHitung()" value="Hitung">
     <br>
     <p id="result"> </p>
